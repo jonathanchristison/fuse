@@ -72,6 +72,7 @@
         <hibernate.annotations.common.version>4.0.4.Final</hibernate.annotations.common.version>
         <hibernate42.version>4.2.22.Final-redhat-1</hibernate42.version>
         <hibernate.validator.version>5.0.3.Final</hibernate.validator.version>
+        <generate.license>true</generate.license>
     </properties>
 
     <repositories>
@@ -730,6 +731,17 @@
     </modules>
 
     <profiles>
+        <profile>
+            <id>offline</id>
+            <activation>
+                <property>
+                    <name>offline</name>
+                </property>
+            </activation>
+            <properties>
+                <generate.license>false</generate.license>
+            </properties>
+        </profile>
         <profile>
             <!--
                 Do a license check by running:
